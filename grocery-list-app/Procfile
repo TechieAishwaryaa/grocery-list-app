@@ -1,1 +1,1 @@
-web: node grocery-list-app/app.js
+web: node app.js
