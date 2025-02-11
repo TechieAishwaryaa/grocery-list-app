@@ -4,27 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>🛒 Grocery List</h1>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">🛒 Grocery List</h1>
 
-    <form action="/add" method="POST">
-        <input type="text" name="item" placeholder="Add a new item" required>
-        <button type="submit">Add</button>
-    </form>
+        <!-- Form to Add Item -->
+        <div class="d-flex justify-content-center mb-4">
+            <form action="/add" method="POST" class="d-flex">
+                <input type="text" name="item" class="form-control" placeholder="Add a new item" required>
+                <button type="submit" class="btn btn-primary ml-2">Add</button>
+            </form>
+        </div>
 
-    <ul>
-        <% groceryList.forEach((item, index) => { %>
-            <li>
-                <%= item %>
-                <form action="/delete" method="POST" style="display: inline;">
-                    <input type="hidden" name="index" value="<%= index %>">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-        <% }); %>
-    </ul>
+        <!-- Grocery List -->
+        <ul class="list-group">
+            <% groceryList.forEach((item, index) => { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= item %>
+                    <!-- Form to Delete Item -->
+                    <form action="/delete" method="POST" style="display: inline;">
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
 
+    <!-- Bootstrap JS and Popper.js (for interactive components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
