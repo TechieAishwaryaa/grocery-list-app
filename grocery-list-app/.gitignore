@@ -1,0 +1,36 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables file (if you are using it for MongoDB or other config)
+.env
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# IDE or text editor files
+.vscode/
+.idea/
+*.swp
+
+# Build directories and production files (if any)
+/dist/
+/build/
+
+# Coverage directory for code coverage tools (optional)
+/coverage/
+
+# Ignore npm and yarn cache (optional)
+.npm/
+/.yarn/
+
+# Ignore production environment files if you have any (e.g., .env.production)
+.env.production
